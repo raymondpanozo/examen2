@@ -61,3 +61,12 @@ For more information on using the Angular CLI, including detailed command refere
 ## docs: document chosen CSS framework
 
 El framework CSS que elegi fue Bootstrap en startbootstrap el startbootstrap-heroic-features-gh-pages version 5.2.3
+
+## chore(ui): add downloaded template and license reference
+
+Nombre del Template que descargue: startbootstrap-heroic-features-gh-pages
+
+Fuente: https://startbootstrap.com/template/heroic-features
+
+licencia: MIT License
+
