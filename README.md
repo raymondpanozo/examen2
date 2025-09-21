@@ -70,3 +70,6 @@ Fuente: https://startbootstrap.com/template/heroic-features
 
 licencia: MIT License
 
+## feat(pwa): offline-ready home with precaching
+
+Exitosamente es offline y descargable por medio del icono de descarga a lado del enlace, esto se logro por el service worker y el ng build --configuration=production de ahy aparace en el apartado de aplicaciones descargadas del chrome
