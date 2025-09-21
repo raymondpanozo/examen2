@@ -92,6 +92,61 @@
         `
       };
 
+      // Renderiza la ruta actual
+      function renderRoute() {
+        const hash = window.location.hash || "#home";
+        const app = document.getElementById("app");
+        app.innerHTML = routes[hash] || "<h1>404</h1><p>Página no encontrada</p>";
+        app.focus();
+
+        // Actualiza aria-current en nav
+        document.querySelectorAll(".nav-link").forEach(link => {
+          link.removeAttribute("aria-current");
+          if (link.getAttribute("href") === hash) {
+            link.setAttribute("aria-current", "page");
+          }
+        });
+
+        // Re-asigna listeners de notificaciones si estamos en Home
+        if (hash === "#home") {
+          const enableBtn = document.getElementById("enableNotifications");
+          const testBtn = document.getElementById("testNotification");
+
+          if (enableBtn) {
+            enableBtn.addEventListener("click", () => {
+              if ("Notification" in window) {
+                Notification.requestPermission().then(permission => {
+                  if (permission === "granted") {
+                    alert("Notificaciones habilitadas");
+                  } else {
+                    alert("Permiso denegado para notificaciones");
+                  }
+                });
+              } else {
+                alert("Este navegador no soporta notificaciones.");
+              }
+            });
+          }
+
+          if (testBtn) {
+            testBtn.addEventListener("click", () => {
+              if ("Notification" in window && Notification.permission === "granted") {
+                new Notification("🔔 Notificación de prueba", {
+                  body: "Esto es una prueba de notificación en tu sitio accesible.",
+                  icon: "assets/favicon.ico"
+                });
+              } else {
+                alert("Debes permitir notificaciones primero.");
+              }
+            });
+          }
+        }
+      }
+
+      // Inicializa el router
+      window.addEventListener("hashchange", renderRoute);
+      window.addEventListener("load", renderRoute);
+
       </script>
 
 </body>
