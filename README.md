@@ -57,3 +57,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## docs: document chosen CSS framework
+
+El framework CSS que elegi fue Bootstrap en startbootstrap el startbootstrap-heroic-features-gh-pages version 5.2.3
